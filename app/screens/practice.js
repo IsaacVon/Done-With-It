@@ -1,23 +1,17 @@
 import React from "react";
 import { View, StyleSheet } from "react-native";
-
-import AppText from "../components/AppText";
-import AppButton from "../components/AppButton";
+import image from "../assets/jacket.jpg";
+import Card from "../components/Card";
 
 function Practice(props) {
   return (
-    <View style={styles.container}>
-      <AppButton
-        title="Dingus"
-        color="secondary"
-        onPress={() => console.log("button working")}
-      />
-    </View>
+      <Card title="title" subTitle="subTitle" image={image} />
   );
 }
 
 const styles = StyleSheet.create({
   container: {
+    backgroundColor: "grey",
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
