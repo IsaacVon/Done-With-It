@@ -1,13 +1,17 @@
 import React from "react";
 import { View } from "react-native";
+
+
 import WelcomeScreen from "./app/screens/WelcomeScreen";
 import ViewImageScreen from "./app/screens/ViewImageScreen";
+import Practice from "./app/screens/practice";
 
 export default function App() {
   return (
     <>
+      <Practice />
       {/* <WelcomeScreen /> */}
-      <ViewImageScreen />
+      {/* <ViewImageScreen /> */}
       {/* <View
         style={{
           backgroundColor: "white",
@@ -36,7 +40,6 @@ export default function App() {
         />
         <View style={{ backgroundColor: "tomato", width: 100, height: 100 }} />
       </View> */}
-      
     </>
   );
 }
