@@ -1,11 +1,14 @@
 import React from "react";
 import { View, StyleSheet } from "react-native";
-import image from "../assets/jacket.jpg";
 import Card from "../components/Card";
 
 function Practice(props) {
   return (
-      <Card title="title" subTitle="subTitle" image={image} />
+    <Card
+      title="Red jacket for sale"
+      subTitle="$100"
+      image={require("../assets/jacket.jpg")}
+    />
   );
 }
 
