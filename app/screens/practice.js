@@ -7,7 +7,11 @@ import AppButton from "../components/AppButton";
 function Practice(props) {
   return (
     <View style={styles.container}>
-      <AppButton title="Dingus" color="secondary" onPress={() => console.log("button working")}/>
+      <AppButton
+        title="Dingus"
+        color="secondary"
+        onPress={() => console.log("button working")}
+      />
     </View>
   );
 }
