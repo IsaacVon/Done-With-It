@@ -15,13 +15,13 @@ function Card({ title, subTitle, image }) {
           <AppText style={styles.subTitle}>{subTitle}</AppText>
         </View>
       </View>
+      //{" "}
     </View>
   );
 }
 
 const styles = StyleSheet.create({
   card: {
-    // flex: 1,
     backgroundColor: colors.white,
     marginBottom: 20,
     borderRadius: 20,
