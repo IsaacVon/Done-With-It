@@ -10,12 +10,21 @@ import {
 
 import colors from "../congif/colors";
 import itemImage from "../assets/chair.jpg";
-
+import { MaterialCommunityIcons } from "@expo/vector-icons";
+import { Colors } from "react-native/Libraries/NewAppScreen";
 export default function App() {
   return (
     <View style={styles.container}>
-      <View style={styles.closeIcon} />
-      <View style={styles.deleteIcon} />
+      <View style={styles.closeIcon}>
+        <MaterialCommunityIcons name="close" color={colors.white} size={30} />
+      </View>
+      <View style={styles.deleteIcon}>
+        <MaterialCommunityIcons
+          name="trash-can-outline"
+          color={colors.white}
+          size={30}
+        />
+      </View>
       <Image resizeMode="contain" source={itemImage} style={styles.itemImage} />
     </View>
   );
@@ -36,17 +45,11 @@ const styles = StyleSheet.create({
   },
 
   closeIcon: {
-    backgroundColor: colors.primary,
-    width: 50,
-    height: 50,
     position: "absolute",
     top: 50,
     left: 30,
   },
   deleteIcon: {
-    backgroundColor: colors.secondary,
-    width: 50,
-    height: 50,
     position: "absolute",
     top: 50,
     right: 30,
