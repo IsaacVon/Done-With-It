@@ -7,15 +7,12 @@ import colors from "../congif/colors";
 
 function Card({ title, subTitle, image }) {
   return (
-    <View style={{ backgroundColor: "#f8f4f4", padding: 20, paddingTop: 100 }}>
-      <View style={styles.card}>
-        <Image source={image} style={styles.image} />
-        <View style={styles.details}>
-          <AppText style={styles.title}>{title}</AppText>
-          <AppText style={styles.subTitle}>{subTitle}</AppText>
-        </View>
+    <View style={styles.card}>
+      <Image source={image} style={styles.image} />
+      <View style={styles.details}>
+        <AppText style={styles.title}>{title}</AppText>
+        <AppText style={styles.subTitle}>{subTitle}</AppText>
       </View>
-      //{" "}
     </View>
   );
 }
