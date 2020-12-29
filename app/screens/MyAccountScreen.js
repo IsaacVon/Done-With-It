@@ -5,6 +5,7 @@ import { MaterialCommunityIcons } from "@expo/vector-icons";
 import ListItem from "../components/ListItem";
 import Screen from "../components/Screen";
 import colors from "../congif/colors";
+import Icon from "../components/Icon";
 
 function MyAccountScreen(props) {
   return (
@@ -22,20 +23,27 @@ function MyAccountScreen(props) {
       <View style={styles.listSpacer}>
         <ListItem
           title="My Listings"
-          image={require("../assets/mosh.jpg")}
+          ImageComponent={
+            <Icon
+              name="format-list-bulleted"
+              backgroundColor={colors.primary}
+            />
+          }
           backgroundColor={colors.white}
           onPress={() => console.log("My Listings")}
         />
         <ListItem
           title="My Messages"
-          image={require("../assets/mosh.jpg")}
+          ImageComponent={
+            <Icon name="email" backgroundColor={colors.secondary} />
+          }
           backgroundColor={colors.white}
           onPress={() => console.log("My Messages")}
         />
       </View>
       <ListItem
         title="Log Out"
-        image={require("../assets/mosh.jpg")}
+        ImageComponent={<Icon name="logout" backgroundColor="#ffe66d" />}
         backgroundColor={colors.white}
         onPress={() => console.log("Log Out")}
       />
