@@ -3,15 +3,24 @@ import { View, StyleSheet } from "react-native";
 import { TextInput } from "react-native-gesture-handler";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 
-import defaultStyles from "../congif/styles"
+import defaultStyles from "../congif/styles";
 
 function AppTextInput({ icon, ...otherProps }) {
   return (
     <View style={styles.container}>
       {icon && (
-        <MaterialCommunityIcons name={icon} size={20} color={defaultStyles.colors.medium} style={styles.icon}/>
+        <MaterialCommunityIcons
+          name={icon}
+          size={20}
+          color={defaultStyles.colors.medium}
+          style={styles.icon}
+        />
       )}
-      <TextInput style={defaultStyles.text} {...otherProps} />
+      <TextInput
+        placeholderTextColor={defaultStyles.colors.medium}
+        style={defaultStyles.text}
+        {...otherProps}
+      />
     </View>
   );
 }
@@ -27,7 +36,7 @@ const styles = StyleSheet.create({
   },
   icon: {
     marginRight: 10,
-  }
+  },
 });
 
 export default AppTextInput;
