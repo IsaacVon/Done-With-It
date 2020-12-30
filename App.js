@@ -28,10 +28,7 @@ export default function App() {
 
   return (
     <Screen>
-
-      <Button title="Select Image" onPress={selectImage} />
-      <Image source={{ uri: imageUri }} style={{ width: 200, height: 200 }} />
-      <ImageInput />
+      <ImageInput imageUri={imageUri} onChangeImage={uri => setImageUri(uri)} />
     </Screen>
   );
 }

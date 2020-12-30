@@ -11,75 +11,67 @@ import * as ImagePicker from "expo-image-picker";
 
 import colors from "../congif/colors";
 
-function ImageInput(props) {
-  const [imageUri, setImageUri] = useState();
+function ImageInput({ imageUri, onChangeImage }) {
+  useEffect(() => {
+    requestPermission();
+  }, []);
 
   const requestPermission = async () => {
     const { granted } = await ImagePicker.requestMediaLibraryPermissionsAsync();
     if (!granted) alert("you need to enable permission to access the library");
   };
 
-  useEffect(() => {
-    requestPermission();
-  }, []);
+  const handlePress = () => {
+    if (!imageUri) selectImage();
+    else
+      Alert.alert("Delete", "Are you sure you want to delete this image?", [
+        {
+          text: "No",
+        },
+        {
+          text: "Yes",
+          onPress: () => onChangeImage(null),
+        },
+      ]);
+  };
 
   const selectImage = async () => {
     try {
-      const result = await ImagePicker.launchImageLibraryAsync();
-      if (!result.cancelled) setImageUri(result.uri);
+      const result = await ImagePicker.launchImageLibraryAsync({
+        mediaTypes: ImagePicker.MediaTypeOptions.Images,
+        quality: 0.5,
+      });
+      if (!result.cancelled) onChangeImage(result.uri);
     } catch (error) {
       console.log("Error reading an image", error);
     }
   };
 
-  const deleteImage = () => {
-    Alert.alert(
-      "Delete",
-      "Are you sure you want to delete this image?",
-      [
-        {
-          text: "Cancel",
-        
-        },
-        {
-          text: "Delete",
-          onPress: () => setImageUri(),
-        },
-      ],
-      { cancelable: false }
-    );
-  };
-
   return (
-    <View style={styles.container}>
-      {!imageUri && (
-        <TouchableWithoutFeedback onPress={selectImage}>
+    <TouchableWithoutFeedback onPress={handlePress}>
+      <View style={styles.container}>
+        {!imageUri && (
           <MaterialCommunityIcons
             name="camera"
             size={35}
             color={colors.medium}
             style={styles.icon}
           />
-        </TouchableWithoutFeedback>
-      )}
+        )}
 
-      {imageUri && (
-        <TouchableWithoutFeedback onPress={deleteImage}>
-          <Image source={{ uri: imageUri }} style={styles.image} />
-        </TouchableWithoutFeedback>
-      )}
-    </View>
+        {imageUri && <Image source={{ uri: imageUri }} style={styles.image} />}
+      </View>
+    </TouchableWithoutFeedback>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    margin: 20,
+    alignItems: "center",
+    backgroundColor: colors.light,
+    borderRadius: 20,
     height: 100,
     width: 100,
-    borderRadius: 20,
-    backgroundColor: colors.light,
-    alignItems: "center",
     justifyContent: "center",
     overflow: "hidden",
   },
