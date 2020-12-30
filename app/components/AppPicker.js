@@ -7,7 +7,6 @@ import {
   Button,
   FlatList,
 } from "react-native";
-import { TextInput } from "react-native-gesture-handler";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 
 import Screen from "./Screen";
