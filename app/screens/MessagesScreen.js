@@ -9,14 +9,17 @@ import Screen from "../components/Screen";
 const initialMessages = [
   {
     id: 1,
-    title: "T1",
+    title: 
+    "D2 fdsaofasoi fdsaofasoi fdsaofasoi fdsaofasoi fdsaofasoi fdsaofasoi fdsaofasoi fdsaofasoi fdsaofasoi fdsaofasoi fdsaofasoi fdsaofasoi fdsaofasoi fdsaofasoi ",
+
     description: "D1",
     image: require("../assets/mosh.jpg"),
   },
   {
     id: 2,
     title: "T2",
-    description: "D2",
+    description:
+      "D2 fdsaofasoi fdsaofasoi fdsaofasoi fdsaofasoi fdsaofasoi fdsaofasoi fdsaofasoi fdsaofasoi fdsaofasoi fdsaofasoi fdsaofasoi fdsaofasoi fdsaofasoi fdsaofasoi ",
     image: require("../assets/mosh.jpg"),
   },
   {
@@ -27,7 +30,7 @@ const initialMessages = [
   },
 ];
 
-function Messages(props) {
+function MessagesScreen(props) {
   const [messages, setMessages] = useState(initialMessages);
   const [refreshing, setRefreshing] = useState(false);
 
@@ -71,4 +74,4 @@ function Messages(props) {
 
 const styles = StyleSheet.create({});
 
-export default Messages;
+export default MessagesScreen;
