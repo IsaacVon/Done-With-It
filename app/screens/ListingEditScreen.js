@@ -27,7 +27,7 @@ const categories = [
 function ListingEditScreen() {
   return (
     <Screen style={styles.container}>
-      <AppFormField
+      <AppForm
         initialValues={{
           title: "",
           price: "",
@@ -57,7 +57,7 @@ function ListingEditScreen() {
           placeholder="Description"
         />
         <SubmitButton title="Post" />
-      </AppFormField>
+      </AppForm>
     </Screen>
   );
 }
