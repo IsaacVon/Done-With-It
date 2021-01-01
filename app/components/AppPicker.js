@@ -20,8 +20,8 @@ function AppPicker({
   numberOfColumns = 1,
   onSelectItem,
   PickerItemComponent = PickerItem,
-  selectedItem,
   placeholder,
+  selectedItem,
   width = "100%",
 }) {
   const [modalVisible, setModalVisible] = useState(false);
