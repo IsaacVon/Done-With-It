@@ -1,13 +1,18 @@
 import React from "react";
 import { StyleSheet, View } from "react-native";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
+import { useNavigation } from "@react-navigation/native";
 
 import ListItem from "../components/ListItem";
 import Screen from "../components/Screen";
 import colors from "../congif/colors";
 import Icon from "../components/Icon";
 
+
 function MyAccountScreen(props) {
+  const navigation = useNavigation();
+
+  
   return (
     <Screen backgroundColor={colors.light}>
       <View style={styles.accountContainer}>
@@ -38,7 +43,8 @@ function MyAccountScreen(props) {
             <Icon name="email" backgroundColor={colors.secondary} />
           }
           backgroundColor={colors.white}
-          onPress={() => console.log("My Messages")}
+          onPress={() => navigation.navigate("MessagesScreen")}
+
         />
       </View>
       <ListItem
