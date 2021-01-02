@@ -1,12 +1,19 @@
 import React from "react";
-import { ImageBackground, Image, StyleSheet, Text, View, Platform } from "react-native";
+import {
+  ImageBackground,
+  Image,
+  StyleSheet,
+  Text,
+  View,
+  Platform,
+} from "react-native";
 
 import AppButton from "../components/AppButton";
 import colors from "../congif/colors";
 import backgroundImage from "../assets/background.jpg";
 import logo from "../assets/logo-red.png";
 
-export default function App() {
+export default function WelcomeScreen({ navigation }) {
   return (
     <ImageBackground
       blurRadius={Platform.OS === "android" ? 2 : 10}
@@ -21,12 +28,12 @@ export default function App() {
         <AppButton
           title="Sign In"
           color="primary"
-          onPress={() => console.log("button working")}
+          onPress={() => navigation.navigate("Login")}
         />
         <AppButton
           title="Register"
           color="secondary"
-          onPress={() => console.log("button working")}
+          onPress={() => navigation.navigate("Register")}
         />
       </View>
     </ImageBackground>
