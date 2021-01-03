@@ -12,6 +12,7 @@ import AppButton from "../components/AppButton";
 import colors from "../congif/colors";
 import backgroundImage from "../assets/background.jpg";
 import logo from "../assets/logo-red.png";
+import routes from "../navigation/routes";
 
 export default function WelcomeScreen({ navigation }) {
   return (
@@ -28,12 +29,12 @@ export default function WelcomeScreen({ navigation }) {
         <AppButton
           title="Sign In"
           color="primary"
-          onPress={() => navigation.navigate("Login")}
+          onPress={() => navigation.navigate(routes.LOGIN)}
         />
         <AppButton
           title="Register"
           color="secondary"
-          onPress={() => navigation.navigate("Register")}
+          onPress={() => navigation.navigate(routes.REGISTER)}
         />
       </View>
     </ImageBackground>
