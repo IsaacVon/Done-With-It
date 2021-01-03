@@ -13,13 +13,13 @@ function ListItem({
   onPress,
   renderRightActions,
   backgroundColor,
-  ImageComponent,
+  IconComponent,
 }) {
   return (
     <Swipeable renderRightActions={renderRightActions}>
       <TouchableHighlight underlayColor={colors.light} onPress={onPress}>
         <View style={[styles.container, { backgroundColor: backgroundColor }]}>
-          {ImageComponent}
+          {IconComponent}
           {image && <Image style={styles.image} source={image} />}
           <View style={styles.textContainer}>
             <AppText style={styles.title} numberOfLines={1}>{title}</AppText>

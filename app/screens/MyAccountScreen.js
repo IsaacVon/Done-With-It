@@ -1,66 +1,77 @@
 import React from "react";
-import { StyleSheet, View } from "react-native";
+import { StyleSheet, View, FlatList } from "react-native";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { useNavigation } from "@react-navigation/native";
 
 import ListItem from "../components/ListItem";
+import ListItemSeparator from "../components/ListItemSeperator";
 import Screen from "../components/Screen";
 import colors from "../congif/colors";
 import Icon from "../components/Icon";
 
+const menuItems = [
+  {
+    title: "My Listings",
+    icon: {
+      name: "format-list-bulleted",
+      backgroundColor: colors.primary,
+    },
+  },
+  {
+    title: "My Messages",
+    icon: {
+      name: "email",
+      backgroundColor: colors.secondary,
+    },
+    targetScreen: "Messages",
+  },
+];
 
-function MyAccountScreen(props) {
-  const navigation = useNavigation();
-
-  
+function AccountScreen({ navigation }) {
   return (
-    <Screen backgroundColor={colors.light}>
-      <View style={styles.accountContainer}>
+    <Screen style={styles.screen}>
+      <View style={styles.container}>
         <ListItem
           title="Isaac Householder"
           subTitle="isaachouseholder@gmail.com"
           image={require("../assets/mosh.jpg")}
-          backgroundColor={colors.white}
-          onPress={() => console.log("Isaac Householder")}
         />
       </View>
-
-      <View style={styles.listSpacer}>
-        <ListItem
-          title="My Listings"
-          ImageComponent={
-            <Icon
-              name="format-list-bulleted"
-              backgroundColor={colors.primary}
+      <View style={styles.container}>
+     
+        <FlatList
+          data={menuItems}
+          keyExtractor={(menuItem) => menuItem.title}
+          ItemSeparatorComponent={ListItemSeparator}
+          renderItem={({ item }) => (
+            <ListItem
+              title={item.title}
+              IconComponent={
+                <Icon
+                  name={item.icon.name}
+                  backgroundColor={item.icon.backgroundColor}
+                />
+              }
+              onPress={() => navigation.navigate(item.targetScreen)}
             />
-          }
-          backgroundColor={colors.white}
-          onPress={() => console.log("My Listings")}
-        />
-        <ListItem
-          title="My Messages"
-          ImageComponent={
-            <Icon name="email" backgroundColor={colors.secondary} />
-          }
-          backgroundColor={colors.white}
-          onPress={() => navigation.navigate("MessagesScreen")}
-
+          )}
         />
       </View>
       <ListItem
         title="Log Out"
-        ImageComponent={<Icon name="logout" backgroundColor="#ffe66d" />}
-        backgroundColor={colors.white}
-        onPress={() => console.log("Log Out")}
+        IconComponent={<Icon name="logout" backgroundColor="#ffe66d" />}
       />
     </Screen>
   );
 }
 
 const styles = StyleSheet.create({
-  listSpacer: {
-    marginVertical: 50,
+  screen: {
+    backgroundColor: colors.light,
+  },
+  container: {
+    marginVertical: 20,
   },
 });
 
-export default MyAccountScreen;
+export default AccountScreen;
