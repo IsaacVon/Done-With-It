@@ -5,13 +5,14 @@ import AppText from "../components/AppText";
 import colors from "../congif/colors";
 import ListItem from "../components/ListItem";
 
-function ListingDetailsScreen({ title, subTitle, image }) {
+function ListingDetailsScreen({ route }) {
+  const listing = route.params;
   return (
     <View>
-      <Image source={image} style={styles.image} />
+      <Image source={listing.image} style={styles.image} />
       <View style={styles.details}>
-        <AppText style={styles.title}>{title}</AppText>
-        <AppText style={styles.price}>{subTitle}</AppText>
+        <AppText style={styles.title}>{listing.title}</AppText>
+        <AppText style={styles.price}>${listing.price}</AppText>
         <View style={styles.userContainer}>
           <ListItem
             image={require("../assets/mosh.jpg")}
@@ -43,9 +44,9 @@ const styles = StyleSheet.create({
     fontSize: 20,
     marginVertical: 10,
   },
-  userContainer:{
+  userContainer: {
     marginVertical: 30,
-  }
+  },
 });
 
 export default ListingDetailsScreen;
