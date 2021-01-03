@@ -1,5 +1,7 @@
 import React from "react";
 import { createStackNavigator } from "@react-navigation/stack";
+import { MaterialCommunityIcons } from "@expo/vector-icons";
+
 import MyAccountScreen from "../screens/MyAccountScreen";
 import MessagesScreen from "../screens/MessagesScreen";
 
