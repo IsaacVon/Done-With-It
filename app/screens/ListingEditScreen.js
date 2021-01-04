@@ -13,7 +13,9 @@ import {
 import FormImagePicker from "../components/forms/FormImagePicker";
 import CategoryPickerItem from "../components/CategoryPickerItem";
 import Screen from "../components/Screen";
+import listingsApi from "../api/listings";
 import useLocation from "../hooks/useLocation";
+import listings from "../api/listings";
 
 const validationSchema = Yup.object().shape({
   title: Yup.string().required().min(1).label("Title"),
@@ -24,13 +26,75 @@ const validationSchema = Yup.object().shape({
 });
 
 const categories = [
-  { label: "Furniture", value: 1200, backgroundColor: "red", icon: "apps" },
-  { label: "Cars", value: 90, backgroundColor: "green", icon: "email" },
-  { label: "Cameras", value: 850, backgroundColor: "blue", icon: "lock" },
+  {
+    backgroundColor: "#fc5c65",
+    icon: "floor-lamp",
+    label: "Furniture",
+    value: 1,
+  },
+  {
+    backgroundColor: "#fd9644",
+    icon: "car",
+    label: "Cars",
+    value: 2,
+  },
+  {
+    backgroundColor: "#fed330",
+    icon: "camera",
+    label: "Cameras",
+    value: 3,
+  },
+  {
+    backgroundColor: "#26de81",
+    icon: "cards",
+    label: "Games",
+    value: 4,
+  },
+  {
+    backgroundColor: "#2bcbba",
+    icon: "shoe-heel",
+    label: "Clothing",
+    value: 5,
+  },
+  {
+    backgroundColor: "#45aaf2",
+    icon: "basketball",
+    label: "Sports",
+    value: 6,
+  },
+  {
+    backgroundColor: "#4b7bec",
+    icon: "headphones",
+    label: "Movies & Music",
+    value: 7,
+  },
+  {
+    backgroundColor: "#a55eea",
+    icon: "book-open-variant",
+    label: "Books",
+    value: 8,
+  },
+  {
+    backgroundColor: "#778ca3",
+    icon: "application",
+    label: "Other",
+    value: 9,
+  },
 ];
 
 function ListingEditScreen() {
   const location = useLocation();
+
+  const handleSubmit = async (listing) => {
+    const result = await listingsApi.addListing({ ...listing, location });
+
+    console.log("result ok?:", result.ok, result);
+    if (!result.ok) {
+      return alert("Could not save the listing");
+    }
+
+    alert("Success");
+  };
 
   return (
     <Screen style={styles.container}>
@@ -42,7 +106,7 @@ function ListingEditScreen() {
           category: null,
           images: [],
         }}
-        onSubmit={(values) => console.log(values)}
+        onSubmit={handleSubmit}
         validationSchema={validationSchema}
       >
         <FormImagePicker name="images" />

@@ -9,26 +9,17 @@ import colors from "../congif/colors";
 import listingsApi from "../api/listings";
 import AppText from "../components/AppText";
 import AppButton from "../components/AppButton";
+import useApi from "../hooks/useApi";
 
 function ListingsScreen({ navigation }) {
-  const [listings, setListings] = useState([]);
-  const [error, setError] = useState(false);
-  const [loading, setLoading] = useState(false);
+
+  const { data: listings, error, loading, request: loadListings } = useApi(
+    listingsApi.getListings
+  );
 
   useEffect(() => {
     loadListings();
   }, []);
-
-  const loadListings = async () => {
-    setLoading(true);
-    const response = await listingsApi.getListings();
-    setLoading(false);
-
-    if (!response.ok) return setError(true);
-
-    setError(false);
-    setListings(response.data);
-  };
 
   return (
     <Screen style={styles.screen}>
