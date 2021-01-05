@@ -12,10 +12,11 @@ import AppButton from "../components/AppButton";
 import useApi from "../hooks/useApi";
 
 function ListingsScreen({ navigation }) {
-
   const { data: listings, error, loading, request: loadListings } = useApi(
     listingsApi.getListings
   );
+
+  // console.log("data:", listings)  This is where the image error went wrong.
 
   useEffect(() => {
     loadListings();

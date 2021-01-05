@@ -1,7 +1,7 @@
 import { create } from "apisauce";
 import cache from "../utility/cache";
 
-const apiClient = create({ baseURL: "http://192.168.1.221:9000/api" });
+const apiClient = create({ baseURL: "http://192.168.1.205:9000/api" });
 
 const get = apiClient.get;
 apiClient.get = async (url, params, axiosConfig) => {

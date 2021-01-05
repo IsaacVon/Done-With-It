@@ -1,16 +1,22 @@
 import { color } from "@storybook/addon-knobs";
 import React from "react";
-import { Text, View, StyleSheet, Image } from "react-native";
-import { TouchableWithoutFeedback } from "react-native-gesture-handler";
+import {
+  View,
+  StyleSheet,
+  Image,
+  TouchableWithoutFeedback,
+} from "react-native";
+// import { Image } from "react-native-expo-image-cache";
 
 import AppText from "../components/AppText";
 import colors from "../congif/colors";
 
 function Card({ title, subTitle, imageUrl, onPress }) {
+  console.log("imageUrl:", imageUrl);
   return (
     <TouchableWithoutFeedback onPress={onPress}>
       <View style={styles.card}>
-        <Image source={{ uri: imageUrl }} style={styles.image} />
+        <Image style={styles.image} source={{ uri: imageUrl }} />
         <View style={styles.details}>
           <AppText style={styles.title}>{title}</AppText>
           <AppText style={styles.subTitle}>{subTitle}</AppText>

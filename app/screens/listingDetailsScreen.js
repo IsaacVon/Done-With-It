@@ -12,7 +12,7 @@ function ListingDetailsScreen({ route }) {
   return (
     <View>
       <Image
-        preview={{ uri: listing.images[0].thumbnailUrl }}
+        // preview={{ uri: listing.images[0].thumbnailUrl }}
         uri={listing.images[0].url}
         style={styles.image}
       />
