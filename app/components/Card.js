@@ -12,7 +12,6 @@ import AppText from "../components/AppText";
 import colors from "../congif/colors";
 
 function Card({ title, subTitle, imageUrl, onPress }) {
-  console.log("imageUrl:", imageUrl);
   return (
     <TouchableWithoutFeedback onPress={onPress}>
       <View style={styles.card}>
