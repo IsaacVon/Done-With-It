@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { NavigationContainer } from "@react-navigation/native";
 
+import { navigationRef } from "./app/navigation/rootNavigation";
 import navigationTheme from "./app/navigation/navigationTheme";
 import AppNavigator from "./app/navigation/AppNavigator";
 import AuthNavigator from "./app/navigation/AuthNavigator";
@@ -26,9 +27,11 @@ export default function App() {
       />
     );
 
+
+
   return (
     <AuthContext.Provider value={{ user, setUser }}>
-      <NavigationContainer theme={navigationTheme}>
+      <NavigationContainer ref={navigationRef} theme={navigationTheme}>
         {user ? <AppNavigator /> : <AuthNavigator />}
       </NavigationContainer>
     </AuthContext.Provider>

@@ -4,6 +4,8 @@ import { MaterialCommunityIcons } from "@expo/vector-icons";
 import * as Notifications from "expo-notifications";
 import * as Permissions from "expo-permissions";
 
+import navigation from "../navigation/rootNavigation";
+import expoPushTokensApi from "../api/expoPushTokens";
 import routes from "../navigation/routes";
 import ListingEditScreen from "../screens/ListingEditScreen";
 import FeedNavigator from "./FeedNavigator";
@@ -15,6 +17,10 @@ const Tab = createBottomTabNavigator();
 const AppNavigator = () => {
   useEffect(() => {
     registerForPushNotifications();
+
+    Notifications.addNotificationResponseReceivedListener((notification) =>
+      navigation.navigate("Account")
+    );
   }, []);
 
   const registerForPushNotifications = async () => {
@@ -24,6 +30,7 @@ const AppNavigator = () => {
 
       const token = await Notifications.getExpoPushTokenAsync();
       console.log(token);
+      expoPushTokensApi.register(token);
     } catch (error) {
       console.log("Error getting a push token", error);
     }
