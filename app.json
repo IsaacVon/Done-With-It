@@ -17,7 +17,9 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier" : "com.isaacvon.donewithit",
+      "buildNumber" : "1.0.0"
     },
  
     "web": {
