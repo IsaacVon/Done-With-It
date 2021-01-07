@@ -9,24 +9,23 @@ import Screen from "../components/Screen";
 const initialMessages = [
   {
     id: 1,
-    title: 
-    "D2 fdsaofasoi fdsaofasoi fdsaofasoi fdsaofasoi fdsaofasoi fdsaofasoi fdsaofasoi fdsaofasoi fdsaofasoi fdsaofasoi fdsaofasoi fdsaofasoi fdsaofasoi fdsaofasoi ",
+    title: "Straw Hat for sale",
 
-    description: "D1",
-    image: require("../assets/mosh.jpg"),
+    description: "Hello! Do you still have the hat for sale?",
+    image: require("../assets/allison.png"),
   },
   {
     id: 2,
-    title: "T2",
-    description:
-      "D2 fdsaofasoi fdsaofasoi fdsaofasoi fdsaofasoi fdsaofasoi fdsaofasoi fdsaofasoi fdsaofasoi fdsaofasoi fdsaofasoi fdsaofasoi fdsaofasoi fdsaofasoi fdsaofasoi ",
+    title: "Karma Revero For Sale",
+    description: "$150k is too high. Would you consider $20,000 cash?",
     image: require("../assets/mosh.jpg"),
   },
   {
     id: 3,
-    title: "T3",
-    description: "D3",
-    image: require("../assets/mosh.jpg"),
+    title: "Camera for sale",
+    description:
+      "Would you trade for a nintendo 64 with a ton of games?",
+    image: require("../assets/winnie.png"),
   },
 ];
 
