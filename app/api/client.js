@@ -2,7 +2,7 @@ import { create } from "apisauce";
 import cache from "../utility/cache";
 import authStorage from "../auth/storage";
 
-const apiClient = create({ baseURL: "http://192.168.1.205:9000/api" });
+const apiClient = create({ baseURL: "http://192.168.1.210:9000/api" });
 
 // Automatically adds auth token to request header
 apiClient.addAsyncRequestTransform(async (request) => {

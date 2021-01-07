@@ -27,8 +27,6 @@ export default function App() {
       />
     );
 
-
-
   return (
     <AuthContext.Provider value={{ user, setUser }}>
       <NavigationContainer ref={navigationRef} theme={navigationTheme}>
