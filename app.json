@@ -19,16 +19,11 @@
     "ios": {
       "supportsTablet": true
     },
-    "android": {
-      "adaptiveIcon": {
-        "foregroundImage": "./app/assets/adaptive-icon.png",
-        "backgroundColor": "#FFFFFF"
-      }
-    },
+ 
     "web": {
       "favicon": "./app/assets/favicon.png"
     },
-    "description": "Updating Description ",
+    "description": "DoneWithIt is a project simiar to the app OfferUp. It was Built by me using React-Native. Github: https://github.com/IsaacVon/Done-With-It ",
     "extra": {
       "bugsnag": {
         "apiKey": "0acd023d30fd79fc7433190547e73ccd"
