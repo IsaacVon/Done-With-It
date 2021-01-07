@@ -8,7 +8,7 @@
     "splash": {
       "image": "./app/assets/splash.png",
       "resizeMode": "cover",
-      "backgroundColor": "#e63c4b" 
+      "backgroundColor": "#e63c4b"
     },
     "updates": {
       "fallbackToCacheTimeout": 0
@@ -28,6 +28,19 @@
     "web": {
       "favicon": "./app/assets/favicon.png"
     },
-    "description": "Updating Description "
+    "description": "Updating Description ",
+    "extra": {
+      "bugsnag": {
+        "apiKey": "0acd023d30fd79fc7433190547e73ccd"
+      }
+    },
+    "hooks": {
+      "postPublish": [
+        {
+          "file": "@bugsnag/expo/hooks/post-publish.js",
+          "config": {}
+        }
+      ]
+    }
   }
 }

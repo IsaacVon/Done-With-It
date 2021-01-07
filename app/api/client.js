@@ -1,8 +1,9 @@
 import { create } from "apisauce";
 import cache from "../utility/cache";
 import authStorage from "../auth/storage";
+import settings from "../congif/settings";
 
-const apiClient = create({ baseURL: "http://192.168.1.210:9000/api" });
+const apiClient = create({ baseURL: settings.apiUrl });
 
 // Automatically adds auth token to request header
 apiClient.addAsyncRequestTransform(async (request) => {
