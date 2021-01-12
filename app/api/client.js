@@ -1,7 +1,7 @@
 import { create } from "apisauce";
 import cache from "../utility/cache";
 import authStorage from "../auth/storage";
-import settings from "../congif/settings";
+import settings from "../config/settings";
 
 const apiClient = create({ baseURL: settings.apiUrl });
 

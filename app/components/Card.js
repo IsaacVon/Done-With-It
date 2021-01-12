@@ -9,7 +9,7 @@ import {
 // import { Image } from "react-native-expo-image-cache";
 
 import AppText from "../components/AppText";
-import colors from "../congif/colors";
+import colors from "../config/colors";
 
 function Card({ title, subTitle, imageUrl, onPress }) {
   return (

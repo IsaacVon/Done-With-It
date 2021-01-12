@@ -9,7 +9,7 @@ import {
 } from "react-native";
 
 import AppButton from "../components/AppButton";
-import colors from "../congif/colors";
+import colors from "../config/colors";
 import backgroundImage from "../assets/background.jpg";
 import logo from "../assets/logo-red.png";
 import routes from "../navigation/routes";

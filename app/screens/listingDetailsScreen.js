@@ -3,7 +3,7 @@ import { View, StyleSheet, KeyboardAvoidingView } from "react-native";
 
 import { Image } from "react-native-expo-image-cache";
 import AppText from "../components/AppText";
-import colors from "../congif/colors";
+import colors from "../config/colors";
 import ListItem from "../components/ListItem";
 import ContactSellerForm from "../components/ContactSellerForm";
 

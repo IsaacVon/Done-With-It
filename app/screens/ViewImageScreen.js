@@ -8,7 +8,7 @@ import {
   View,
 } from "react-native";
 
-import colors from "../congif/colors";
+import colors from "../config/colors";
 import itemImage from "../assets/chair.jpg";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { Colors } from "react-native/Libraries/NewAppScreen";

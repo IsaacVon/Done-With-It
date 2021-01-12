@@ -1,7 +1,7 @@
 import React from "react";
 import { StyleSheet, View } from "react-native";
 
-import colors from "../congif/colors";
+import colors from "../config/colors";
 
 function ListItemSeperator() {
   return <View style={styles.seperator} />;
